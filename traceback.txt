@@ -1,0 +1,32 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/scenes/script.rpy", line 13, in script call
+    call intro from _call_intro
+  File "game/scenes/act4b.rpy", line 63, in script
+    with moveincenter
+  File "game/scenes/act4b.rpy", line 63, in <module>
+    with moveincenter
+NameError: name 'moveincenter' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/scenes/script.rpy", line 13, in script call
+    call intro from _call_intro
+  File "game/scenes/act4b.rpy", line 63, in script
+    with moveincenter
+  File "/Users/kasey/renpy-8.0.3-sdk/renpy/ast.py", line 1671, in execute
+    trans = renpy.python.py_eval(self.expr)
+  File "/Users/kasey/renpy-8.0.3-sdk/renpy/python.py", line 1153, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Users/kasey/renpy-8.0.3-sdk/renpy/python.py", line 1146, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/scenes/act4b.rpy", line 63, in <module>
+    with moveincenter
+NameError: name 'moveincenter' is not defined
+
+macOS-13.4.1-arm64-arm-64bit arm64
+Ren'Py 8.1.0.23042901+nightly
+Snake Bitten 1.0
+Fri Jul 21 00:58:46 2023
