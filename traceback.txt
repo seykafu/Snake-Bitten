@@ -1,32 +1,80 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
+While processing text tag {'role': 'system', 'content': "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You're pretending to be kindhearted and selfless, but in reality, you're a racist old fart who buys women and holds sex parties for other rich people. You're racist and dislike minorities, but pretend you don't care. You're trying to persuade a woman named Enpa to build a new 'AR tool' that can revolutionize the next video game. You offered her a million dollars if she completes the project in time. Keep your response to a max of 30 words."} in '[{\'role\': \'system\', \'content\': "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You\'re pretending to be kindhearted and selfless, but in reality, you\'re a racist old fart who buys women and holds sex parties for other rich people. You\'re racist and dislike minorities, but pretend you don\'t care. You\'re trying to persuade a woman named Enpa to build a new \'AR tool\' that can revolutionize the next video game. You offered her a million dollars if she completes the project in time. Keep your response to a max of 30 words."}, {\'role\': \'assistant\', \'content\': \'And who might you be?\'}, {\'role\': \'user\', \'content\': "So can I sue the company if I don\'t get my million dollars?"}, {\'role\': \'assistant\', \'content\': "We\'ll discuss all terms and conditions once you agree to work on the project."}]'.:
   File "game/scenes/script.rpy", line 13, in script call
     call intro from _call_intro
-  File "game/scenes/act4b.rpy", line 63, in script
-    with moveincenter
-  File "game/scenes/act4b.rpy", line 63, in <module>
-    with moveincenter
-NameError: name 'moveincenter' is not defined
+  File "game/scenes/act2b.rpy", line 93, in script
+    python:
+  File "game/scenes/act2b.rpy", line 116, in <module>
+    allen("[response]")
+Exception: Unknown text tag '\'role\': \'system\', \'content\': "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You\'re pretending to be kindhearted and selfless, but in reality, you\'re a racist old fart who buys women and holds sex parties for other rich people. You\'re racist and dislike minorities, but pretend you don\'t care. You\'re trying to persuade a woman named Enpa to build a new \'AR tool\' that can revolutionize the next video game. You offered her a million dollars if she completes the project in time. Keep your response to a max of 30 words."'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/scenes/script.rpy", line 13, in script call
     call intro from _call_intro
-  File "game/scenes/act4b.rpy", line 63, in script
-    with moveincenter
-  File "/Users/kasey/renpy-8.0.3-sdk/renpy/ast.py", line 1671, in execute
-    trans = renpy.python.py_eval(self.expr)
-  File "/Users/kasey/renpy-8.0.3-sdk/renpy/python.py", line 1153, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "/Users/kasey/renpy-8.0.3-sdk/renpy/python.py", line 1146, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/scenes/act4b.rpy", line 63, in <module>
-    with moveincenter
-NameError: name 'moveincenter' is not defined
+  File "game/scenes/act2b.rpy", line 93, in script
+    python:
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scenes/act2b.rpy", line 116, in <module>
+    allen("[response]")
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\character.py", line 1352, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\character.py", line 1003, in do_display
+    display_say(who,
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\character.py", line 693, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\core.py", line 4172, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\core.py", line 2779, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\screen.py", line 731, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 1336, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\text\text.py", line 2171, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\text\text.py", line 629, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\text\text.py", line 1289, in segment
+    raise Exception("Unknown text tag %r" % text)
+Exception: Unknown text tag '\'role\': \'system\', \'content\': "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You\'re pretending to be kindhearted and selfless, but in reality, you\'re a racist old fart who buys women and holds sex parties for other rich people. You\'re racist and dislike minorities, but pretend you don\'t care. You\'re trying to persuade a woman named Enpa to build a new \'AR tool\' that can revolutionize the next video game. You offered her a million dollars if she completes the project in time. Keep your response to a max of 30 words."'
 
-macOS-13.4.1-arm64-arm-64bit arm64
-Ren'Py 8.1.0.23042901+nightly
+Windows-10-10.0.22621 AMD64
+Ren'Py 8.1.1.23060707
 Snake Bitten 1.0
-Fri Jul 21 00:58:46 2023
+Sat Jul 29 01:29:20 2023

@@ -112,7 +112,6 @@ label act3b:
                 #Then add it in the "history" of messages"
                 messages.append(
                     {"role": "user", "content": response}
-                    
                 )
 
                 if apikey != '':

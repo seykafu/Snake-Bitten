@@ -92,6 +92,9 @@ label act2b:
 
     python:
             import chatgpt1
+            from apikey import openai_api_key
+
+            api_key=openai_api_key
 
             #The "system" message is the initial prompt of your NPC
             #Messages with "assistant" are messages from the NPC, here there's a first message so we add it to the list of messages already said by the NPC
@@ -103,67 +106,38 @@ label act2b:
             while True:
 
                 #Then add it in the "history" of messages
-                content = "So can I sue the company if I don't get my million dollars?"
+                if len(messages) < 7:
+                     content = "So can I sue the company if I don't get my million dollars?"
+                else:
+                     content = response2
                 messages.append(
                     {"role": "user", "content": content}
-                    
+                )
+                
+                messages = chatgpt1.completion(messages=messages,api_key=openai_api_key)
+                response1 = messages[-1]["content"]
+
+                allen("[response1]")
+
+                messages.append({"role": "user", "content": response1})
+
+                #Switch to Enpa
+                messages.append({"role": "system", "content": "Now play the character of Enpa, a 27-year-old game developer who was recently laid off at his company, Hundred Studios. The reason why you were laid off was because you were being racist toward a colleague. You're quite arrogant and spoilted, and you think you deserve better. You're interested in a project proposal with your former company because they're offering you a million dollars. They want you to build an 'AR tool' that will help enable a real-life version of Snakes and Ladders. Act stoic and guarded. Ask a few questions to Allen, the director at Hundred Studios. Keep your answer to less than 30 words."})
+                messages.append({"role": "user", "content": response1})
+    
+                messages = chatgpt1.completion(
+                messages=messages,api_key=openai_api_key
                 )
 
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
-
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-                #So we display just that
-                allen("[response]")
+                response2 = messages[-1]["content"]
             
-                messages = [
-                    {"role": "system", "content": "Now play the character of Enpa, a 27-year-old game developer who was recently laid off at his company, Hundred Studios. The reason why you were laid off was because you were being racist toward a colleague. You're quite arrogant and spoilted, and you think you deserve better. You're interested in a project proposal with your former company because they're offering you a million dollars. They want you to build an 'AR tool' that will help enable a real-life version of Snakes and Ladders. Act stoic and guarded. Ask a few questions to Allen, the director at Hundred Studios. Keep your answer to less than 30 words."},
-                    {"role": "assistant", "content": "And who might you be?"}
-                ]
+                messages.append({"role": "user", "content": response2})
+                
+                enpa("[response2]")
 
-                #Then add it in the "history" of messages
-                messages.append({"role": "user", "content": response})
+                if len(messages) > 10:   # Stop conversation after 4 rounds
+                    break
 
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
-
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-
-                enpa("[response]")
-
-                messages = [
-                {"role": "system", "content": "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company called Hundred Studios in a fictional country called Aequalis. You're pretending to be kindhearted and selfless, but in reality, you're a racist old fart who buys women and holds sex parties for other rich people. You're racist and dislike minorities, but pretend you don't care. You're trying to persuade a woman named Enpa to build a new 'AR tool' that can revolutionize the next video game, which is a real-life version of Snakes and Ladders. You offered her a million dollars if she completes the project in time (1 month). If Enpa asks you a few questions, answer them in a way that will make her want to join. Keep your response to a max of 35 words."},
-                {"role": "assistant", "content": "And who might you be?"}
-                ]
-
-                #Then add it in the "history" of messages"
-                messages.append(
-                    {"role": "user", "content": response}
-                    
-                )
-
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
-
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-                #So we display just that
-                allen("[response]")
-                break
     enpa "Also, about that secret of mine...you don't plan to ever-"
 
     allen "Of course not. We at Hundred know better than to ever reveal such a thing, so long as you comply with our project needs."
