@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/scenes/act0a.rpy", line 4: expected statement.
-    renpy.random.shuffle(playlist) 
-                                   ^
+File "game/scenes/act1b.rpy", line 103: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.1.0.23042901+nightly
-Thu Jul  6 01:01:06 2023
+Tue Aug 22 00:08:35 2023
