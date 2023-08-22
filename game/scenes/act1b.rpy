@@ -43,8 +43,10 @@ label act1b:
     "{i}AI time. It'll take a few seconds to load responses. Only click once to proceed."
 
     python:
-            import chatgpt1
+        import chatgpt1
+        from apikey import openai_api_key
 
+<<<<<<< HEAD
 
 
             #The "system" message is the initial prompt of your NPC
@@ -99,6 +101,55 @@ label act1b:
 
                 if len(messages) > 10:   # Stop conversation after 4 rounds
                     break
+=======
+        api_key=openai_api_key
+
+        #The "system" message is the initial prompt of your NPC
+        #Messages with "assistant" are messages from the NPC, here there's a first message so we add it to the list of messages already said by the NPC
+
+        while True:
+            messages = [
+            {"role": "system", "content": "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You're currently trying to persuade a woman named Enpa to build a new 'AR tool' that can revolutionize the next video game, but she declines. Threaten her by claiming you know her darkest secret which will be exposed if she doesn't join. Try not to lose her on the phone, and don't hang up the call. Keep your response to less than 35 words."},
+            {"role": "assistant", "content": "And who might you be?"}
+            ]
+
+            #Then add it in the "history" of messages
+            if len(messages) < 7:
+                content = "Hello, Enpa speaking, who is this on the phone? How did you get my number?"
+            else:
+                content = response2
+
+            messages.append(
+                {"role": "user", "content": content}
+            )
+            
+            messages = chatgpt1.completion(messages=messages,api_key=openai_api_key)
+            response1 = messages[-1]["content"]
+
+            allen("[response1]")
+
+            if len(messages) > 13:   # Stop conversation after 5 rounds
+                break
+
+            messages.append({"role": "user", "content": response1})
+
+            #Switch to Enpa
+            messages.append({"role": "system", "content": "Now play the character o f Enpa, a 27-year-old game developer who was recently laid off at his company, Hundred. You're quite arrogant and spoiled, and you think you deserve better. Someone just called you, asking for you to join their project. You declined, but they're persistent on taking you in. Act annoyed as you decline again. Keep your answer to less than 30 words."})
+            messages.append({"role": "user", "content": response1})
+
+            messages = chatgpt1.completion(
+            messages=messages,api_key=openai_api_key
+            )
+
+            response2 = messages[-1]["content"]
+        
+            messages.append({"role": "user", "content": response2})
+            
+            enpa("[response2]")
+
+            if len(messages) > 10:   # Stop conversation after 4 rounds
+                break
+>>>>>>> 2c0005c0bf65add6f23dbcb9badf9eca9a6acaf2
 
     enpa "What?! You... How could you know such a-"
 
