@@ -35,10 +35,11 @@ label act4b:
 
     nvl clear
     scene clove_hallway with fade
-
     show enpa happy at right
+    with moveinright
 
     show allen at left
+    with moveinleft
 
     enpa "So why are we here?"
 
@@ -56,12 +57,4 @@ label act4b:
 
     "Allen tapped the play icon."
 
-    nvl clear
-    scene clove_room with fade
-
-    show clove happy at center 
-    with moveinleft
-
-    clove "..."
-
-
+    jump act5

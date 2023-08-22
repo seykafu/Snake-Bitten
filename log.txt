@@ -1,4 +1,4 @@
-Sat Jul 29 01:45:44 2023
+Sun Aug 20 22:13:48 2023
 Windows-10-10.0.22621
 Ren'Py 8.1.1.23060707
  
@@ -7,7 +7,7 @@ Bootstrap to the start of init.init. took 0.02s
 Early init. took 0.00s
 Loader init. took 0.01s
 Loading error handling. took 0.02s
-Loading script. took 0.08s
+Loading script. took 0.12s
 Loading save slot metadata. took 0.02s
 Loading persistent. took 0.00s
 Running init code. took 0.07s

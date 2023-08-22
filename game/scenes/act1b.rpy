@@ -43,122 +43,55 @@ label act1b:
     "{i}AI time. It'll take a few seconds to load responses. Only click once to proceed."
 
     python:
-            import chatgpt1
+        import chatgpt1
+        from apikey import openai_api_key
 
-            #The "system" message is the initial prompt of your NPC
-            #Messages with "assistant" are messages from the NPC, here there's a first message so we add it to the list of messages already said by the NPC
+        api_key=openai_api_key
+
+        #The "system" message is the initial prompt of your NPC
+        #Messages with "assistant" are messages from the NPC, here there's a first message so we add it to the list of messages already said by the NPC
+
+        while True:
             messages = [
-                {"role": "system", "content": "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company called 'Hundred Studios' in a fictional country called Aequalis. You're pretending to be kindhearted and selfless, but in reality, you're a racist old fart who buys women and holds sex parties for other rich people. You're racist and dislike minorities, but pretend you don't care. You're trying to persuade a woman named Enpa to build a new 'AR tool' that can revolutionize the next video game. Keep your response to a max of 30 words."},
-                {"role": "assistant", "content": "And who might you be?"}
+            {"role": "system", "content": "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You're currently trying to persuade a woman named Enpa to build a new 'AR tool' that can revolutionize the next video game, but she declines. Threaten her by claiming you know her darkest secret which will be exposed if she doesn't join. Try not to lose her on the phone, and don't hang up the call. Keep your response to less than 35 words."},
+            {"role": "assistant", "content": "And who might you be?"}
             ]
 
-            while True:
-
-                #Then add it in the "history" of messages
+            #Then add it in the "history" of messages
+            if len(messages) < 7:
                 content = "Hello, Enpa speaking, who is this on the phone? How did you get my number?"
-                messages.append(
-                    {"role": "user", "content": content}
-                    
-                )
+            else:
+                content = response2
 
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
-
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-                #So we display just that
-                allen("[response]")
+            messages.append(
+                {"role": "user", "content": content}
+            )
             
-                messages = [
-                    {"role": "system", "content": "Now play the character of Enpa, a 27-year-old game developer who was recently laid off at his company, Hundred Studios. The reason why you were laid off was because you were being racist toward a colleague. You're quite arrogant and spoilted, and you think you deserve better. Someone just called you, asking for you to join their project. Decline and keep your answer to less than 20 words."},
-                    {"role": "assistant", "content": "And who might you be?"}
-                ]
+            messages = chatgpt1.completion(messages=messages,api_key=openai_api_key)
+            response1 = messages[-1]["content"]
 
-                #Then add it in the "history" of messages
-                messages.append({"role": "user", "content": response})
+            allen("[response1]")
 
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
+            if len(messages) > 13:   # Stop conversation after 5 rounds
+                break
 
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
+            messages.append({"role": "user", "content": response1})
 
-                enpa("[response]")
+            #Switch to Enpa
+            messages.append({"role": "system", "content": "Now play the character o f Enpa, a 27-year-old game developer who was recently laid off at his company, Hundred. You're quite arrogant and spoiled, and you think you deserve better. Someone just called you, asking for you to join their project. You declined, but they're persistent on taking you in. Act annoyed as you decline again. Keep your answer to less than 30 words."})
+            messages.append({"role": "user", "content": response1})
 
-                messages = [
-                {"role": "system", "content": "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You're pretending to be kindhearted and selfless, but in reality, you're a racist old fart who buys women and holds sex parties for other rich people. You're racist and dislike minorities, but you act like that's not the case. You're currently trying to persuade a woman named Enpa to build a new 'AR tool' that can revolutionize the next video game. Keep your responses to a max of 35 words every time."},
-                {"role": "assistant", "content": "And who might you be?"}
-            ]
-                #Then add it in the "history" of messages
-                content = "Hello, Enpa speaking, who is this on the phone? How did you get my number?"
-                messages.append(
-                    {"role": "user", "content": response}
-                    
-                )
+            messages = chatgpt1.completion(
+            messages=messages,api_key=openai_api_key
+            )
 
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
+            response2 = messages[-1]["content"]
+        
+            messages.append({"role": "user", "content": response2})
+            
+            enpa("[response2]")
 
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-                #So we display just that
-                allen("[response]")
-
-                messages = [
-                    {"role": "system", "content": "Now play the character of Enpa, a 27-year-old game developer who was recently laid off at his company, Hundred. You're quite arrogant and spoiled, and you think you deserve better. Someone just called you, asking for you to join their project. You declined, but they're persistent on taking you in. Act annoyed as you decline again. Keep your answer to less than 30 words."},
-                    {"role": "assistant", "content": "And who might you be?"}
-                ]
-
-                #Then add it in the "history" of messages
-                messages.append({"role": "user", "content": response})
-
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
-
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-
-                enpa("[response]")
-
-                messages = [
-                {"role": "system", "content": "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You're currently trying to persuade a woman named Enpa to build a new 'AR tool' that can revolutionize the next video game, but she declines. Threaten her by claiming you know her darkest secret which will be exposed if she doesn't join. Keep your response to less than 35 words."},
-                {"role": "assistant", "content": "And who might you be?"}
-            ]
-                #Then add it in the "history" of messages
-                content = "Hello, Enpa speaking, who is this on the phone? How did you get my number?"
-                messages.append(
-                    {"role": "user", "content": response}
-                    
-                )
-
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
-
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-                #So we display just that
-                allen("[response]")
-
+            if len(messages) > 10:   # Stop conversation after 4 rounds
                 break
 
     enpa "What?! You... How could you know such a-"

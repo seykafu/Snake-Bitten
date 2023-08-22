@@ -15,7 +15,7 @@ label act2b:
 
     play music "upbeat_corporate.mp3" fadein 1.0
 
-    scene office_hallway with fade
+    scene office_lobby with fade
     show enpa happy at right
     with moveinright
 
@@ -36,10 +36,6 @@ label act2b:
     allen "Well anyway, we won't keep you here too long for today. Please come over here to this counter."
 
     "Enpa cautiously followed Allen from behind."
-
-    scene office_lobby with fade
-    show allen at left with moveinleft
-    show enpa happy at right with moveinright
 
     "Once they arrived at the counter where the wooden front desk sat, Allen pointed to a set of documents." 
 
@@ -98,18 +94,19 @@ label act2b:
 
             #The "system" message is the initial prompt of your NPC
             #Messages with "assistant" are messages from the NPC, here there's a first message so we add it to the list of messages already said by the NPC
-            messages = [
-                {"role": "system", "content": "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You're pretending to be kindhearted and selfless, but in reality, you're a racist old fart who buys women and holds sex parties for other rich people. You're racist and dislike minorities, but pretend you don't care. You're trying to persuade a woman named Enpa to build a new 'AR tool' that can revolutionize the next video game. You offered her a million dollars if she completes the project in time. Keep your response to a max of 30 words."},
-                {"role": "assistant", "content": "And who might you be?"}
-            ]
 
             while True:
 
                 #Then add it in the "history" of messages
+                messages = [
+                {"role": "system", "content": "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You're pretending to be kindhearted and selfless, but in reality, you're a racist old fart who buys women and holds sex parties for other rich people. You're racist and dislike minorities, but pretend you don't care. You're trying to persuade a woman named Enpa to build a new 'AR tool' that can revolutionize the next video game. You offered her a million dollars if she completes the project in time (1 month). Keep your response to a max of 30 words."},
+                {"role": "assistant", "content": "And who might you be?"}
+            ]
                 if len(messages) < 7:
                      content = "So can I sue the company if I don't get my million dollars?"
                 else:
                      content = response2
+
                 messages.append(
                     {"role": "user", "content": content}
                 )
