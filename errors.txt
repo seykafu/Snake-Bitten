@@ -2,16 +2,7 @@
 errors listed below, and try again.
 
 
-<<<<<<< HEAD
-File "game/scenes/act1b.rpy", line 103: Indentation mismatch.
-
-Ren'Py Version: Ren'Py 8.1.0.23042901+nightly
-Tue Aug 22 00:08:35 2023
-=======
-File "game/scenes/act2b.rpy", line 115: invalid syntax
-        messages.append{"role": "assistant", "content": response}
-                        ^
+File "game/scenes/act2b.rpy", line 155: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.1.1.23060707
-Sat Jul 29 01:16:35 2023
->>>>>>> 2c0005c0bf65add6f23dbcb9badf9eca9a6acaf2
+Sat Aug 26 17:14:00 2023
