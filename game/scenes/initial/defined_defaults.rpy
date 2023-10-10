@@ -4,7 +4,7 @@ define aye = Character('Aye', color="#000080")
 define allen = Character('Allen', color="#8b0000")
 define chanlina = Character('Chanlina', color="#ADD8E6")
 define others = Character('Others', color="#000000")
-define samantha = Character('Samantha', color="#FFA500")
+define samantha = Character('Samantha', color="#FF8C00")
 
 define wiperight = CropMove(1.0, "wiperight")
 define wipeleft = CropMove(1.0, "wipeleft")
@@ -27,15 +27,15 @@ define irisin = CropMove(1.0, "irisin")
 image clove happy = "clove clear.png"
 image clove dark = "clove_dark.png"
 image clove handsome = "clove2.png"
-image enpa happy = "enpa clear.png"
-image enpa dark = "enpa_dark.png"
+image enpa happy = "enpa2ss.png"
+image enpa dark = "enpa darks.png"
 image allen = "allen.png"
 image chanlina = "chanlina.png"
 image samantha = "samantha.png"
 image aequalis = "aequalis.jpg"
 image office_hallway = "lobby2.jpeg"
-image clove_hallway = "hallwayAI.png"
-image clove_room = "clove_room.jpg"
+image clove_hallway = "hallway.jpg"
+image clove_room = "clove_room.png"
 image lab = "lab_.jpeg"
 image elevator_hall = "hallway.png"
 image elevator = "elevatorAI.png"

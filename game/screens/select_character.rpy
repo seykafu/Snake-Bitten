@@ -18,6 +18,6 @@ screen select_character:
                 yalign 1.05
                 xpos 1500
                 ypos 280
-                idle "enpa clear.png"
-                hover "enpa_dark.png"
+                idle "enpa2ss.png"
+                hover "enpa darks.png"
                 action Return("FMC")

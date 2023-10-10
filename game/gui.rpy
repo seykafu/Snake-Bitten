@@ -105,7 +105,7 @@ define gui.textbox_yalign = 1.0
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
 define gui.name_xpos = 360
-define gui.name_ypos = 20
+define gui.name_ypos = 21
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -129,7 +129,7 @@ define gui.namebox_tile = False
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
 define gui.dialogue_xpos = 402
-define gui.dialogue_ypos = 75
+define gui.dialogue_ypos = 82
 
 ## The maximum width of dialogue text, in pixels.
 define gui.dialogue_width = 1116
@@ -350,7 +350,7 @@ define gui.history_name_xalign = 1.0
 
 ## The position, width, and alignment of the dialogue text.
 define gui.history_text_xpos = 255
-define gui.history_text_ypos = 3
+define gui.history_text_ypos = 4
 define gui.history_text_width = 1110
 define gui.history_text_xalign = 0.0
 
@@ -383,7 +383,7 @@ define gui.nvl_name_xalign = 1.0
 
 ## The position, width, and alignment of the dialogue text.
 define gui.nvl_text_xpos = 675
-define gui.nvl_text_ypos = 12
+define gui.nvl_text_ypos = 14
 define gui.nvl_text_width = 885
 define gui.nvl_text_xalign = 0.0
 
