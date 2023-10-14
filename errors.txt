@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes/act2b.rpy", line 155: Indentation mismatch.
+File "game/scenes/act5.rpy", line 71: unexpected indent
+            if len(messages) < 12:
+            ^
 
-Ren'Py Version: Ren'Py 8.1.1.23060707
-Sat Aug 26 17:14:00 2023
+Ren'Py Version: Ren'Py 8.1.0.23042901+nightly
+Wed Oct 11 01:22:04 2023

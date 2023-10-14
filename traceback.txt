@@ -1,20 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-<<<<<<< HEAD
   File "game/scenes/script.rpy", line 16, in script call
     call act1a from _call_act1a
   File "game/scenes/act1a.rpy", line 35, in script
     u "You’re quite a cutie, gettin’ scared like that."
 Exception: Sayer 'u' is not defined.
-=======
-Exception: Could not find font 'game/fonts/FiraSans-Book.otf'.
->>>>>>> 2c0005c0bf65add6f23dbcb9badf9eca9a6acaf2
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-<<<<<<< HEAD
   File "game/scenes/script.rpy", line 16, in script call
     call act1a from _call_act1a
   File "game/scenes/act1a.rpy", line 35, in script
@@ -24,83 +19,8 @@ Full traceback:
   File "/Users/kasey/renpy-8.0.3-sdk/renpy/ast.py", line 783, in eval_who
     raise Exception("Sayer '%s' is not defined." % who)
 Exception: Sayer 'u' is not defined.
-=======
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\core.py", line 3579, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\core.py", line 4172, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\core.py", line 2779, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 492, in renpy.display.render.render_screen
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\screen.py", line 731, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 886, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 1107, in render
-    surf = render(d, width - x, rh, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\behavior.py", line 944, in render
-    rv = super(Button, self).render(width, height, st, at)
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 1289, in render
-    xminimum = max(xminimum, size_groups[size_group].width(width, height, st, at))
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 1226, in width
-    rend = renpy.display.render.render_for_size(i, width, height, st, at)
-  File "render.pyx", line 318, in renpy.display.render.render_for_size
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\behavior.py", line 944, in render
-    rv = super(Button, self).render(width, height, st, at)
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\display\layout.py", line 1336, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\text\text.py", line 2171, in render
-    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\text\text.py", line 665, in __init__
-    glyphs = ts.glyphs(s, self)
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\text\text.py", line 257, in glyphs
-    fo = font.get_font(self.font, self.size, self.bold, self.italic, 0, self.antialias, self.vertical, self.hinting, layout.oversample)
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\text\font.py", line 721, in get_font
-    face = load_face(fn)
-  File "C:\Users\kasey\renpy-8.1.1-sdk\renpy\text\font.py", line 662, in load_face
-    raise Exception("Could not find font {0!r}.".format(orig_fn))
-Exception: Could not find font 'game/fonts/FiraSans-Book.otf'.
->>>>>>> 2c0005c0bf65add6f23dbcb9badf9eca9a6acaf2
 
-Windows-10-10.0.22621 AMD64
-Ren'Py 8.1.1.23060707
+macOS-13.5.2-arm64-arm-64bit arm64
+Ren'Py 8.1.0.23042901+nightly
 Snake Bitten 1.0
-<<<<<<< HEAD
-Tue Aug 22 00:15:49 2023
-=======
-Sun Aug 20 21:37:44 2023
->>>>>>> 2c0005c0bf65add6f23dbcb9badf9eca9a6acaf2
+Thu Oct 12 20:48:16 2023
