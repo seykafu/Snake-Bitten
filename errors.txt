@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes/act5.rpy", line 71: unexpected indent
-            if len(messages) < 12:
-            ^
+File "game/scenes/act5.rpy", line 60: invalid syntax
+    clove{"[response1]"}
+          ^
 
-Ren'Py Version: Ren'Py 8.1.0.23042901+nightly
-Wed Oct 11 01:22:04 2023
+Ren'Py Version: Ren'Py 8.1.1.23060707
+Sun Oct 15 16:34:36 2023
