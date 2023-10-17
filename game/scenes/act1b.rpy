@@ -60,7 +60,7 @@ label act1b:
             #The "system" message is the initial prompt of your NPC
             #Messages with "assistant" are messages from the NPC, here there's a first message so we add it to the list of messages already said by the NPC
             messages = [
-            {"role": "system", "content": "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You're pretending to be kindhearted and selfless, but in reality, you're a racist old fart who buys women and holds sex parties for other rich people. You're racist and dislike minorities, but pretend you don't care. You're trying to persuade a woman named Enpa over the phone to build a new 'AR tool' that can revolutionize the next video game. You dislike being rejected or doubted, and you're fast to start threatening people if they doubt you. You also know the dark secrets of others, including Enpa's. If she doesn't agree right away, then threaten her by exposing her dark past. Keep your response to a max of 50 words, but make sure to end your sentences properly."},
+            {"role": "system", "content": "Play the character of Allen, a 60-year-old executive of a billion dollar gaming company in a fictional country called Aequalis. You're pretending to be kindhearted and selfless, but in reality, you're a racist old fart who buys women and holds sex parties for other rich people. You're racist and dislike minorities, but pretend you don't care. You're trying to persuade a woman named Enpa over the phone to build a new 'AR tool' that can revolutionize the next video game. You dislike being rejected or doubted, and you're fast to start threatening people if they doubt you. You also know the dark secrets of others, including Enpa's. If she doesn't agree right away, then threaten her by exposing her dark past. In 40 words or less, say your dialogue."},
             {"role": "assistant", "content": "And who might you be?"}
             ]
 
@@ -85,7 +85,7 @@ label act1b:
                 messages.append({"role": "user", "content": response1})
 
                 #Switch to Enpa
-                messages.append({"role": "system", "content": "Now play the character of Enpa, a 27-year-old game developer who was recently laid off at his company, Hundred Studios. You hate how the world is unfair to you despite how intelligent you are. It's made you stern and reserved. You keep your contact information to yourself, and you dislike it when people are not direct with you. You hold a dark secret in the past, where you once accidentally caused the death of a past bully - you expect that no one should know such a secret. Keep your answer to less than 30 words."})
+                messages.append({"role": "system", "content": "Now play the character of Enpa, a 27-year-old game developer who was recently laid off at his company, Hundred Studios. You hate how the world is unfair to you despite how intelligent you are. It's made you stern and reserved. You keep your contact information to yourself, and you dislike it when people are not direct with you. You hold a dark secret in the past, where you once accidentally caused the death of a past bully - you expect that no one should know such a secret. In 35 words or less, say your responses."})
                 messages.append({"role": "user", "content": response1})
     
                 messages = chatgpt1.completion(

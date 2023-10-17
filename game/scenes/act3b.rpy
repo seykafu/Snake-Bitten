@@ -54,120 +54,36 @@ label act3b:
     "{i}AI time. It'll take a few seconds to load responses. Only click once to proceed."
 
     python:
-            import chatgpt1
+        import chatgpt1
+        from apikey import openai_api_key
 
-            #The "system" message is the initial prompt of your NPC
-            #Messages with "assistant" are messages from the NPC, here there's a first message so we add it to the list of messages already said by the NPC
-            messages = [
-                {"role": "system", "content": "Play the character of Samantha, a thirty-year-old woman who used to be a chess grandmaster. Because of the current misogynistic society that's developed in the past few years, you were forced to give up your title and become a servant for male millionaires. One day, you overheard the boss of a prestigious gaming company called 'Hundred' talking about a grand project that will turn the old 'Snakes and Ladders' game into a real-life simulation. You snuck into the lab one day (you have access because of your sexual relationship with the superiors) and encountered a woman named Enpa who's working on the project. You know about the secrets of her project even though she doesn't, and you try to indirectly tell her to stop the project, otherwise everyone's lives' are in danger. You also act stubborn and rude. Keep your response to a max of 35 words."},
-                {"role": "assistant", "content": "And who might you be?"}
-            ]
+        api_key=openai_api_key
 
-            while True:
+        #The "system" message is the initial prompt of your NPC
+        #Messages with "assistant" are messages from the NPC, here there's a first message so we add it to the list of messages already said by the NPC
+        messages = [
+            {"role": "system", "content": "Now play the character of Samantha, a thirty-year-old woman who used to be a chess grandmaster. Because of the current misogynistic society that's developed in the past few years, you were forced to give up your title and become a sex worker for male millionaires. One day, you overheard the boss of a prestigious gaming company called 'Hundred' talking about a grand project that will turn the old 'Snakes and Ladders' game into a real-life simulation. You snuck into the lab one day (you have access because of your sexual relationship with the superiors) and encountered a woman named Enpa who's working on the project. You know about the secrets of her project even though she doesn't, and you try to indirectly tell her to stop the project, otherwise everyone's lives' are in danger. You also act stubborn and rude. Keep your response to a max of 35 words."},
+            {"role": "assistant", "content": "And who might you be?"}
+        ]
 
-                #Then add it in the "history" of messages
-                content = "What's your name and why are you here?"
-                messages.append(
-                    {"role": "user", "content": content}
-                    
-                )
+        while True:
+            if len(messages) % 2 == 0:
+                messages.append({"role": "system", "content": "Then play the character of Enpa again, a 27-year-old game developer who was recently laid off at his company, Hundred. The reason why you were laid off was because you were being racist toward a colleague. You're quite arrogant and spoilted, and you think you deserve better. You're currently working on a revolutionary AR game that will turn the old 'Snakes and Ladders' board game into a real-life simulation. You're in the lab working with your team to finish the project, as you will earn a million dollars upon completion. You see a woman walk into your lab without permission, so you ask her who she is and why she showed up. Act stoic and guarded, and don't listen to her. keep your answer to less than 30 words."})
+            else:
+                messages.append({"role": "system", "content": "Now play the character of Samantha, a thirty-year-old woman who used to be a chess grandmaster. Because of the current misogynistic society that's developed in the past few years, you were forced to give up your title and become a sex worker for male millionaires. One day, you overheard the boss of a prestigious gaming company called 'Hundred' talking about a grand project that will turn the old 'Snakes and Ladders' game into a real-life simulation. You snuck into the lab one day (you have access because of your sexual relationship with the superiors) and encountered a woman named Enpa who's working on the project. You know about the secrets of her project even though she doesn't, and you try to indirectly tell her to stop the project, otherwise everyone's lives' are in danger. You also act stubborn and rude. Keep your response to a max of 35 words."})
 
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
-
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-                #So we display just that
-                samantha("[response]")
+            messages = chatgpt1.completion(messages=messages, api_key=openai_api_key)
+            response = messages[-1]["content"]
             
-                messages = [
-                    {"role": "system", "content": "Now play the character of Enpa, a 27-year-old game developer who was recently laid off at his company, Hundred. The reason why you were laid off was because you were being racist toward a colleague. You're quite arrogant and spoilted, and you think you deserve better. You're currently working on a revolutionary AR game that will turn the old 'Snakes and Ladders' board game into a real-life simulation. You're in the lab working with your team to finish the project, as you will earn a million dollars upon completion. You see a woman walk into your lab without permission, so you ask her who she is and why she showed up. Act stoic and guarded. keep your answer to less than 30 words."},
-                    {"role": "assistant", "content": "And who might you be?"}
-                ]
-
-                #Then add it in the "history" of messages
-                messages.append({"role": "user", "content": response})
-
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
-
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-
+            # Extract and store the role-specific responses
+            if len(messages) % 2 == 0:
                 enpa("[response]")
-
-                messages = [
-                    {"role": "system", "content": "Play the character of Samantha, a thirty-year-old woman who used to be a chess grandmaster. Because of the current misogynistic society that's developed in the past few years, you were forced to give up your title and become a sex worker for male millionaires. One day, you overheard the boss of a prestigious gaming company called 'Hundred' talking about a grand project that will turn the old 'Snakes and Ladders' game into a real-life simulation. You snuck into the lab one day (you have access because of your sexual relationship with the superiors) and encountered a woman named Enpa who's working on the project. You know about the secrets of her project even though she doesn't, and you try to indirectly tell her to stop the project, otherwise everyone's lives' are in danger. You also act stubborn and rude. Keep your response to a max of 35 words."},
-                    {"role": "assistant", "content": "And who might you be?"}
-                ]
-
-                #Then add it in the "history" of messages"
-                messages.append(
-                    {"role": "user", "content": response}
-                )
-
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
-
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-                #So we display just that
+            else:
                 samantha("[response]")
 
-                messages = [
-                    {"role": "system", "content": "Now play the character of Enpa, a 27-year-old game developer who was recently laid off at his company, Hundred. The reason why you were laid off was because you were being racist toward a colleague. You're quite arrogant and spoilted, and you think you deserve better. You're currently working on a revolutionary AR game that will turn the old 'Snakes and Ladders' board game into a real-life simulation. You're in the lab working with your team to finish the project, as you will earn a million dollars upon completion. You see a woman walk into your lab without permission, so you ask her who she is and why she showed up. Act stoic and guarded, and don't listen to her. keep your answer to less than 30 words."},
-                    {"role": "assistant", "content": "And who might you be?"}
-                ]
+            messages.append({"role": "user", "content": response})
 
-                #Then add it in the "history" of messages
-                messages.append({"role": "user", "content": response})
-
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
-
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-
-                enpa("[response]")
-
-                messages = [
-                    {"role": "system", "content": "Play the character of Samantha, a thirty-year-old woman who used to be a chess grandmaster. Because of the current misogynistic society that's developed in the past few years, you were forced to give up your title and become a sex worker for male millionaires. One day, you overheard the boss of a prestigious gaming company called 'Hundred' talking about a grand project that will turn the old 'Snakes and Ladders' game into a real-life simulation. You snuck into the lab one day (you have access because of your sexual relationship with the superiors) and encountered a woman named Enpa who's working on the project. You know about the secrets of her project even though she doesn't, and you try to indirectly tell her to stop the project, otherwise everyone's lives' are in danger. You also act stubborn and rude. Keep your response to a max of 35 words."},
-                    {"role": "assistant", "content": "And who might you be?"}
-                ]
-
-                #Then add it in the "history" of messages"
-                messages.append(
-                    {"role": "user", "content": response}
-                    
-                )
-
-                if apikey != '':
-                    #We ask ChatGPT to "complete" the conversation by adding a response
-                    #If you have an API key, let's use that
-                    messages = chatgpt1.completion(messages,api_key=apikey)
-                else :
-                    messages = chatgpt1.completion(messages,openai_api_key)
-
-                #Here we only care about the response from the NPC
-                response = messages[-1]["content"]
-                #So we display just that
-                samantha("[response]")
+            if len(messages) > 18:   # Stop conversation after 4 rounds
                 break
 
     enpa "So are you going to leave or what? You clearly don't belong here."
