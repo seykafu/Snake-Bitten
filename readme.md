@@ -4,7 +4,7 @@ Snake Bitten is a visual novel story which I've built using Ren'Py and leverages
 
 The VN features two main characters - Enpa and Clove, who both just got laid off from their respective jobs as game developers. Watch as their stories unfold in parallel and see the magic of GPT3.5 allowing my characters to converse with each other without any hard-coded dialogue!
 
-![alt text](http://game/gui/SB.png)
+![Snake Bitten](/game/gui/SB.png)
 
 In this story, Enpa and Clove run into a unique opportunity by a mysterious man named Allen to build a new game - a real life version of "Snakes and Ladders" which features more dangerous implications than they initially expected. Play as either character in this multi-path visual novel demo while watching AI allow characters to talk to each other naturally in the dialogue!
 
