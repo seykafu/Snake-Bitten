@@ -22,7 +22,7 @@ def completion(messages, api_key="", proxy=''):
     data = {
         "model": "gpt-3.5-turbo",
         "messages": messages,
-        "max_tokens": 45,
+        "max_tokens": 70,
         "n": 1
     }
 

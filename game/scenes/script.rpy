@@ -13,8 +13,8 @@ label start:
     call intro from _call_intro
 
     #Now start act 1
-    call act1a from _call_act1a
+    #call act1a from _call_act1a
 
-    call act2a from _call_act2a
+    #call act2a from _call_act2a
 
     return

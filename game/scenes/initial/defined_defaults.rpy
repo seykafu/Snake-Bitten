@@ -5,6 +5,7 @@ define allen = Character('Allen', color="#8b0000")
 define chanlina = Character('Chanlina', color="#ADD8E6")
 define others = Character('Others', color="#000000")
 define samantha = Character('Samantha', color="#FF8C00")
+define u = Character('???', color="#808080")
 
 define wiperight = CropMove(1.0, "wiperight")
 define wipeleft = CropMove(1.0, "wipeleft")
@@ -30,6 +31,8 @@ image clove handsome = "clove2.png"
 image enpa happy = "enpa2ss.png"
 image enpa dark = "enpa darks.png"
 image allen = "allen.png"
+image u = "unknowngray.png"
+image aye = "aye.png"
 image chanlina = "chanlina.png"
 image samantha = "samantha.png"
 image aequalis = "aequalis.jpg"

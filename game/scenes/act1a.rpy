@@ -271,7 +271,7 @@ label act1a:
 
     clove "Say what now?"
 
-    aye "You heard me. A {i}milliiiioooon{/i}dollars being offered to build a simple Snakes and Ladders game."
+    aye "You heard me. A {i}milliiiioooon{/i} dollars being offered to build a simple Snakes and Ladders game."
 
     aye "There's a secret group of investors I'm working with right now who'd love to meet you to get a contract signed, actually. They sent me since today was your last day at work."
 
@@ -279,5 +279,4 @@ label act1a:
 
     clove "Wait...a million dollars?"
 
-
-    return
+    jump act2a

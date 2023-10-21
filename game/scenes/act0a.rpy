@@ -47,7 +47,7 @@ label mc_start:
 
     m "Before I go further, please start by inputing your OpenAI API key. If you don't have one, that's okay! The game will go on under its default script. You'll still have fun regardless."
 
-    m "If you're unsure where to find your API, just search 'Where do I find my Secret OPENAI API Key?' on Google. Note that you need to create an OPENAI account."
+    m "If you're unsure where to find your API, just search 'Where do I find my Secret OPENAI API Key?' on Google. Note that you need to create an OPENAI account. Again, if you don't have an API key, press enter to skip."
 
     python:
         #We get the API Key from the User. Because you should NEVER give your API key in any form with your game let alone share it on a public repository
@@ -104,7 +104,7 @@ label mc_start:
         #The "system" message is the initial prompt of your NPC
         #Messages with "assistant" are messages from the NPC, here there's a first message so we add it to the list of messages already said by the NPC
         messages = [
-            {"role": "system", "content": "Play the character of Enpa, a 28-year-old woman who's currently working for {i}Hundred Studios{/i}, the largest game company in Aequal. You're incredibly intelligent, but sometimes lack social skills. You're on your way out of the office in a hurry, hoping to find dinner somehwere nearby. If someone tries to talk to you, please excuse yourself immediately and leave wherever you are. Don't be nice, act insolent and busy. Keep your responses to a max of 20 words every time."},
+            {"role": "system", "content": "Play the character of Enpa, a 28-year-old woman who's currently working for {i}Hundred Studios{/i}, the largest game company in Aequal. You're incredibly intelligent, but sometimes lack social skills. You're on your way out of the office in a hurry, hoping to find dinner somehwere nearby. If someone tries to talk to you, please excuse yourself immediately and leave wherever you are. Don't be nice, act insolent and busy. Keep your responses to a max of 30 words every time."},
             {"role": "assistant", "content": "And who might you be?"}
         ]
 
@@ -137,3 +137,5 @@ label mc_start:
     hide enpa happy with moveoutleft
 
     clove "I.. I see. Well, nevermind that, I guess. Gotta get out of this scary-looking hallway first."
+
+    jump act1a
