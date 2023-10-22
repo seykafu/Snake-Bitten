@@ -12,7 +12,6 @@ Watch this first demo where you can interact with a character directly:
 https://github.com/seykafu/Snake-Bitten/assets/35230390/b09bc0b2-e5a5-42f1-be45-9cdba8864d18
 
 Now watch this second demo where two characters are interacting with each other using AI with no hard-coded dialogue!
-![25b9eb93-7a10-4e64-b74a-70633f04f119](https://github.com/seykafu/Snake-Bitten/assets/35230390/74ed3267-8b0a-4278-8fa4-51f9aa74396d)
 
 https://github.com/seykafu/Snake-Bitten/assets/35230390/d0d30000-3c66-42aa-8d7d-79b7f1bb9896
 
