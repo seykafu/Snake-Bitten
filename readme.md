@@ -9,8 +9,10 @@ The VN features two main characters - Enpa and Clove, who both just got laid off
 In this story, Enpa and Clove run into a unique opportunity by a mysterious man named Allen to build a new game - a real life version of "Snakes and Ladders" which features more dangerous implications than they initially expected. Play as either character in this multi-path visual novel demo while watching AI allow characters to talk to each other naturally in the dialogue!
 
 Watch this first demo where you can interact with a character directly:
-https://github.com/seykafu/Snake-Bitten/assets/35230390/5d69d1bd-360b-4396-9606-468693300a78
+https://github.com/seykafu/Snake-Bitten/assets/35230390/b09bc0b2-e5a5-42f1-be45-9cdba8864d18
 
+Now watch this second demo where two characters are interacting with each other using AI with no hard-coded dialogue!
+![25b9eb93-7a10-4e64-b74a-70633f04f119](https://github.com/seykafu/Snake-Bitten/assets/35230390/74ed3267-8b0a-4278-8fa4-51f9aa74396d)
 
 ## Installation
 
