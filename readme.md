@@ -11,6 +11,10 @@ In this story, Enpa and Clove run into a unique opportunity by a mysterious man 
 Watch this first demo where you can interact with a character directly:
 https://github.com/seykafu/Snake-Bitten/assets/35230390/554d6ccf-9cb4-4a42-980e-6d6752c4c19a
 
+Now watch two characters talk to each other by themselves using AI - like 2 NPCs interacting in a real world!
+https://github.com/seykafu/Snake-Bitten/assets/35230390/fb63b362-f41e-4e85-b7c7-1edfea620c72
+
+
 ## Installation
 
 There are two ways you can try my game or run my code. 
